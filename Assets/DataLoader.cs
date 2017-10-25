@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DataLoader : MonoBehaviour {
     string createUserURL = "http://gamedevee.com/InsertUser.php";
-    public string inputUserName;
+    public string CurrUser { get; set; }
+    //public string inputUserName;
 
     //void Start()
     //{
@@ -15,14 +16,14 @@ public class DataLoader : MonoBehaviour {
         WWWForm form = new WWWForm();
         form.AddField("usernamePost", username);
         WWW www = new WWW(createUserURL, form);
-        CreateNewUserScore(username);
+        //CreateNewUserScore(username, 0);
     }
-    private void CreateNewUserScore(string username)
+    public void CreateNewUserScore(string username, int score)
     {
         string _createUserURL = "http://gamedevee.com/InsertUserScore.php";
         WWWForm form = new WWWForm();
         form.AddField("usernamePost", username);
-        form.AddField("userScorePost", 0);
+        form.AddField("userScorePost", score);
         WWW www = new WWW(_createUserURL, form);
     }
 }
