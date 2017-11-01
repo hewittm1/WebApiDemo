@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DataLoader : MonoBehaviour {
-    string createUserURL = "http://gamedevee.com/InsertUser.php";
+    public string createUserURL = "http://gamedevee.com/InsertUser.php";
     public string CurrUser { get; set; }
     //public string inputUserName;
 
